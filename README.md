@@ -10,7 +10,7 @@ Archipelago Doom is a fork of [Crispy Doom](https://github.com/fabiangreffrath/c
 
 ### Windows
 
-1. Download Archipelago Doom from the [release page](https://github.com/ArchipelagoDoom/APDoom/releases/tag/v2.0.0-beta3).
+1. Download Archipelago Doom from the [release page](https://github.com/ArchipelagoDoom/APDoom/releases/latest).
    Windows users will want to download `apdoom-Windows-x64.zip`.
 2. Extract the contents of the zip file into a new folder.
 3. Run `apdoom-launcher.exe`.
@@ -20,7 +20,7 @@ Archipelago Doom is a fork of [Crispy Doom](https://github.com/fabiangreffrath/c
 
 We distribute an AppImage for Linux users which should function regardless of the distro being used.
 
-1. Download Archipelago Doom from the [release page](https://github.com/ArchipelagoDoom/APDoom/releases/tag/v2.0.0-beta3).
+1. Download Archipelago Doom from the [release page](https://github.com/ArchipelagoDoom/APDoom/releases/latest).
    Linux users will want to download `APDoom-Linux-x86_64.AppImage`.
 2. Make the AppImage executable if it isn't already. (`chmod +x APDoom-Linux-x86_64.AppImage`)
 3. Run the AppImage.
