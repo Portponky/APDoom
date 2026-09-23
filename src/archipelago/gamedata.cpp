@@ -705,7 +705,7 @@ int json_parse_map_tweaks(const Json::Value& json, map_tweaks_storage_t &output)
 				parse_sidedefs_tweak_block(json[map_lump_name]["sidedefs"], output[idx.ep][idx.map]);
 			else if (tweak_type == "metadata")
 				parse_metadata_tweak_block(json[map_lump_name]["metadata"], output[idx.ep][idx.map]);
-			else
+			else if (tweak_type != "comment") // People put comments in map tweaks, just silently ignore them
 				printf("APDOOM: Unknown tweak section '%s', ignoring\n", tweak_type.c_str());
 		}
 	}
