@@ -1120,6 +1120,9 @@ static const crispy_statsline_func_t crispy_statslines[NUM_STATSFORMATS] =
 // [AP] Archipelago HUD display
 int HU_GetActiveAPMessageCount(void);
 
+struct ap_notification_icon_t;
+const ap_notification_icon_t* ap_get_notification_icons(int* count);
+
 void HU_ClearAPMessages()
 {
 #if 0
@@ -1571,6 +1574,19 @@ void HU_Ticker(void)
 	s = str;
 	while (*s)
 	    HUlib_addCharToTextLine(w_isinlined ? &w_allstats : &w_scrts, *(s++));
+    }
+    
+    int notifications = 0;
+    ap_get_notification_icons(&notifications);
+    int stats_pos = HU_TITLEX + (notifications > 0 ? 36 : 0);
+    hu_textline_t* targets[4] = {&w_allstats, &w_kills, &w_items, &w_scrts};
+    for (int n = 0; n < 4; ++n)
+    {
+      if (targets[n]->x == stats_pos)
+        continue;
+      int offset = stats_pos - targets[n]->x;
+      offset = offset > 0 ? 1 : -1;
+      targets[n]->x += offset;
     }
 
     if (crispy->leveltime == WIDGETS_ALWAYS || (automapactive && crispy->leveltime == WIDGETS_AUTOMAP))
