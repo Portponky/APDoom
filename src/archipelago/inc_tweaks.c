@@ -162,6 +162,6 @@ static void P_TweakSegsForLinedef(mapseg_t* segs, int numsegs, ap_maptweak_t *tw
 
     for (int n = 0; n < numsegs; ++n)
       if (segs[n].linedef == tweak->target)
-        segs[n].side = 1 - segs[n].side;
+        segs[n].side = !segs[n].side;
 }
 
